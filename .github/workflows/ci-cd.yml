@@ -1,5 +1,4 @@
 name: android CI/CD
-uses: subosito/flutter-action@v2.10.0
 
 on:
   push:
@@ -12,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # or: 'beta', 'dev' or 'master'
+      - run: flutter --version
+
       - name: Checkout Code
         uses: actions/checkout@v2
 
