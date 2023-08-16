@@ -1,0 +1,64 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+
+  desc "Unit test"
+  lane :unit_test do
+
+      current_folder = Dir.pwd
+        # Run your shell script commands here
+        sh("echo 'Running shell script in #{current_folder}'")
+        # Backtrack to the parent folder
+       second_folder = File.expand_path("../..", current_folder)
+#         check if the file exists then run the test class
+        if File.exist?(second_folder)
+            sh("echo 'Running shell script in #{second_folder}'")
+            test_class = File.join(second_folder,"test","unit_test.dart")
+            UI.message("Running unit test on #{test_class}")
+
+            begin
+             sh("flutter","test",test_class)
+             rescue => exception
+                UI.user_error!("Unit test failed for #{exception.message}")
+            end
+        else
+            UI.user_error!("No unit test file found")
+        end
+
+ end
+end
