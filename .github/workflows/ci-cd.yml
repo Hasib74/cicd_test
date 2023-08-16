@@ -6,7 +6,7 @@ on:
       - master
 jobs:
 
-  runs-on: android-latest
+  runs-on: ubuntu-latest
 
   steps:
     - name: Checkout Code
