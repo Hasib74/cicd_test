@@ -38,7 +38,7 @@ platform :android do
 
 
   desc "Unit test"
-  lane :unit_test do
+  lane :unit_test_and_build do
 
       current_folder = Dir.pwd
         # Run your shell script commands here
@@ -55,6 +55,20 @@ platform :android do
              sh("flutter","pub","get")
              sh("flutter","--version")
              sh("flutter","test",test_class)
+
+             if $?.exitstatus != 0
+                 UI.user_error!("Unit test failed")
+
+              else
+                UI.success("Unit test passed")
+
+                #build the apk
+
+                sh("flutter","build","apk")
+
+
+             end
+
              rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")
             end
