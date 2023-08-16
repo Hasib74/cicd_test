@@ -39,10 +39,10 @@ Submit a new Beta Build to Crashlytics Beta
 
 Deploy a new version to the Google Play
 
-### android unit_test
+### android unit_test_and_build
 
 ```sh
-[bundle exec] fastlane android unit_test
+[bundle exec] fastlane android unit_test_and_build
 ```
 
 Unit test

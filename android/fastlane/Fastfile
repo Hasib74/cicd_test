@@ -56,24 +56,43 @@ platform :android do
              sh("flutter","--version")
             test_result  =  sh("flutter","test",test_class)
 
-             if test_result
-                 UI.user_error!("Unit test success")
 
-                  sh("flutter", "build", "apk")
+          if test_result
+            sh("echo 'Result of test_result  #{test_result}'");
 
-                      apk_path = Dir.glob("build/app/outputs/flutter-apk/app-release.apk").first
+            UI.success("Unit test success")
 
-                   if apk_path
-                        custom_apk_path = File.join("test_apk_folder", "app-release.apk")
-                        FileUtils.mv(apk_path, custom_apk_path)
-                        UI.success("APK built and saved to #{custom_apk_path}")
-                      else
-                        UI.user_error!("Failed to locate built APK.")
-                   end
+            gradle(
+              task: "clean"
+            )
 
-              else
-                UI.success("Unit test failed")
-             end
+            gradle(
+              task: "assemble",
+              build_type: "Release",
+
+            )
+
+
+            end
+
+#              if test_result
+#                  UI.user_error!("Unit test success")
+#
+#                   sh("flutter", "build", "apk")
+#
+# #                       apk_path = Dir.glob("build/app/outputs/flutter-apk/app-release.apk").first
+# #
+# #                    if apk_path
+# #                         custom_apk_path = File.join("test_apk_folder", "app-release.apk")
+# #                         FileUtils.mv(apk_path, custom_apk_path)
+# #                         UI.success("APK built and saved to #{custom_apk_path}")
+# #                       else
+# #                         UI.user_error!("Failed to locate built APK.")
+# #                    end
+#
+#               else
+#                 UI.success("Unit test failed")
+#              end
 
              rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")
