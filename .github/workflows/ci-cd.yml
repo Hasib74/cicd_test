@@ -32,5 +32,5 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: fastlane --fastlane_folder android/fastlane android_unit_test
+        run: fastlane android_unit_test FASTLANE_LANE=android_unit_test
 
