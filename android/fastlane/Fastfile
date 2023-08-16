@@ -56,17 +56,23 @@ platform :android do
              sh("flutter","--version")
              sh("flutter","test",test_class)
 
-             if $?.exitstatus != 0
-                 UI.user_error!("Unit test failed")
+             if $?.success?
+                 UI.user_error!("Unit test success")
+
+                  sh("flutter", "build", "apk")
+
+                      apk_path = Dir.glob("build/app/outputs/flutter-apk/app-release.apk").first
+
+                   if apk_path
+                        custom_apk_path = File.join("test_apk_folder", "app-release.apk")
+                        FileUtils.mv(apk_path, custom_apk_path)
+                        UI.success("APK built and saved to #{custom_apk_path}")
+                      else
+                        UI.user_error!("Failed to locate built APK.")
+                   end
 
               else
-                UI.success("Unit test passed")
-
-                #build the apk
-
-                sh("flutter","build","apk")
-
-
+                UI.success("Unit test failed")
              end
 
              rescue => exception
