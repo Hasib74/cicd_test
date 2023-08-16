@@ -1,0 +1,23 @@
+name: android CI/CD
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+
+  runs-on: android-latest
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Fastlane
+      run: gem install fastlane -NV
+
+    - name: Build And Test
+      run: fastlane android build_and_test
+
+    - name: Unit Test
+      run: fastlane android unit_test
+

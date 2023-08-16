@@ -12,6 +12,7 @@ class Welcome extends StatelessWidget {
       ),
       child: const Row(
         //direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text("Welcome"),
           Icon(Icons.ac_unit),
