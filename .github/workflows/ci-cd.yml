@@ -32,7 +32,5 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: |
-          export FASTLANE_ROOT=android/fastlane  # Set the FASTLANE_ROOT variable
-          fastlane android_unit_test
+        run: cd android && fastlane android unit_test
 
