@@ -52,6 +52,8 @@ platform :android do
             UI.message("Running unit test on #{test_class}")
 
             begin
+             sh("flutter","pub","get")
+             sh("flutter","--version")
              sh("flutter","test",test_class)
              rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")
