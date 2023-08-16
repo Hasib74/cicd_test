@@ -5,22 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0012404">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0009911">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0136785">
+      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0098098">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.0125661">
+      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.0105471">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="3.2816059">
+      <testcase classname="fastlane.lanes" name="3: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="3.1461082">
         
       </testcase>
     
