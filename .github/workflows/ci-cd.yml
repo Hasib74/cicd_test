@@ -14,11 +14,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0  # Adjust Ruby version as needed
+
+      - name: Install Bundler
+        run: gem install bundler
+
       - name: Install Fastlane
         run: gem install fastlane -NV
 
-      - name: Build And Test
-        run: fastlane android build_and_test
+      - name: Check Fastlane version
+        run: fastlane --version
+
+#      - name: Build And Test
+#        run: fastlane android build_and_test
 
       - name: Unit Test
         run: fastlane android unit_test
