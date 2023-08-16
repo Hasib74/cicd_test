@@ -54,9 +54,9 @@ platform :android do
             begin
              sh("flutter","pub","get")
              sh("flutter","--version")
-             sh("flutter","test",test_class)
+            test_result  =  sh("flutter","test",test_class)
 
-             if $?.success?
+             if test_result &&  test_result.success?
                  UI.user_error!("Unit test success")
 
                   sh("flutter", "build", "apk")
