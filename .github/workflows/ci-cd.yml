@@ -32,5 +32,5 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: cd android && fastlane android unit_test
+        run: cd android && fastlane unit_test
 
