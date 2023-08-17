@@ -93,7 +93,7 @@ platform :android do
                 sh('mkdir -p apk')
 
                 # Move the APK to the 'apk' folder
-                sh('mv ./android/app/build/outputs/apk/debug/app-debug.apk apk/')
+                sh('mv ./android/app/build/app/outputs/flutter-apk/app-release.apk apk/')
 
 
             end
