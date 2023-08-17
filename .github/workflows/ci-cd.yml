@@ -37,6 +37,10 @@ jobs:
 #      - name: Build And Test
 #        run: fastlane android build_and_test
 
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+
       - name: Unit Test
         run: cd android && ./gradlew app:assembleDebug && fastlane unit_test_and_build
 
