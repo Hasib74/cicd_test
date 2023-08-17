@@ -62,35 +62,21 @@ platform :android do
 
             UI.success("Unit test success")
 
+            sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
+          source_apk = './build/app/outputs/flutter-apk/app-release.apk'
+         destination_folder = './apk'
 
 
+        sh("mkdir -p #{destination_folder}")
 
 
-            sh("flutter", "build", "apk")
+        sh("mv #{source_apk} #{destination_folder}")
+
+
             end
-
-#              if test_result
-#                  UI.user_error!("Unit test success")
-#
-#                   sh("flutter", "build", "apk")
-#
-# #                       apk_path = Dir.glob("build/app/outputs/flutter-apk/app-release.apk").first
-# #
-# #                    if apk_path
-# #                         custom_apk_path = File.join("test_apk_folder", "app-release.apk")
-# #                         FileUtils.mv(apk_path, custom_apk_path)
-# #                         UI.success("APK built and saved to #{custom_apk_path}")
-# #                       else
-# #                         UI.user_error!("Failed to locate built APK.")
-# #                    end
-#
-#               else
-#                 UI.success("Unit test failed")
-#              end
-
-             rescue => exception
+          rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")
-            end
+          end
         else
             UI.user_error!("No unit test file found")
         end
