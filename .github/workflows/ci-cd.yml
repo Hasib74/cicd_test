@@ -38,5 +38,11 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: chmod +x ./gradlew && cd android && fastlane unit_test_and_build
+        run: | 
+          cd ${{ github.workspace }}
+          cd android && fastlane unit_test_and_build
+
+      - name: Create APK Directory
+        run: mkdir -p test_apk
+
 
