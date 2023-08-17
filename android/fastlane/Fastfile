@@ -59,55 +59,33 @@ platform :android do
 
           if test_result
 
-#                 sh("echo 'Result of test_result  #{test_result}'");
-#
-#                 UI.success("Unit test success")
-#
-#                 sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
-#
-#                 source_apk = './build/app/outputs/flutter-apk/app-release.apk'
-#
-#                 destination_folder = './apk'
-# #
-# #                 sh("mkdir -p #{destination_folder}")
-# #
-# #                 sh("mv #{source_apk} #{destination_folder}")
-#
-#                 UI.success( "Apk file is in #{source_apk}")
-#
-#
-# #                 #upload to github
-# #                 sh("git","config","--global","user.email","hasibakon74@gmail.com")
-# #                 sh("git","config","--global","user.name","hasib74")
-# #                 sh("git","add",".")
-# #                 sh("git","commit","-m","Unit test passed")
-# #
-# #                 sh("git","push","origin","master")
-# #                 UI.success("Pushed to master")
-#
+                 sh("flutter", "build", "apk", "--release", "--no-tree-shake-icons")
 
+                 # Determine the source and destination paths relative to the project root
+                 source_apk_relative = "build/app/outputs/flutter-apk/app-release.apk"
+                 destination_dir_relative = "my_apk"
 
+                 # Expand the paths to the absolute paths based on the project root
+                 project_root = File.expand_path("../..", __dir__)  # Get the parent directory of the Fastlane folder
+                 source_apk = File.expand_path(source_apk_relative, project_root)
+                 destination_dir = File.expand_path(destination_dir_relative, project_root)
 
-                sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
+                 # Ensure the source APK file exists
+                 unless File.exist?(source_apk)
+                   UI.user_error!("APK file not found at '#{source_apk}'.")
+                 end
 
-                # make a directory named 'apk' if it doesn't exist
+                 # Create the destination directory if it doesn't exist
+                 FileUtils.mkdir_p(destination_dir)
 
+                 # Build the destination path
+                 destination_apk = File.join(destination_dir, "app-release.apk")
 
+                 # Move the APK file to the destination directory
+                 FileUtils.mv(source_apk, destination_apk)
 
-                # Create a folder named 'apk' if it doesn't exist
-
-              #  sh('mkdir -p apk')
-
-
-                  FileUtils.mkdir_p("my_apk")
-
-                  FileUtils.mv("build/app/outputs/flutter-apk/app-release.apk", "my_apk/")
-
-
-                # Move the APK to the 'apk' folder
-              #  sh('mv ./build/app/outputs/flutter-apk/app-release.apk apk/')
-
-
+                 # Print a success message
+                 UI.success("APK moved to '#{destination_apk}'.")
             end
           rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")

@@ -5,37 +5,37 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0008905">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0008105">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0099438">
+      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0097153">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.00966">
+      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.009908">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: flutter pub get" time="1.5279745">
+      <testcase classname="fastlane.lanes" name="3: flutter pub get" time="1.4868481">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: flutter --version" time="1.1406332">
+      <testcase classname="fastlane.lanes" name="4: flutter --version" time="1.0235173">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="3.0236224">
+      <testcase classname="fastlane.lanes" name="5: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="2.8537806">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: flutter build apk --release --no-tree-shake-icons" time="3.8270578">
+      <testcase classname="fastlane.lanes" name="6: flutter build apk --release --no-tree-shake-icons" time="3.2573569">
         
       </testcase>
     
