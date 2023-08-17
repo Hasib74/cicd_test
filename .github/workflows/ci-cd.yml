@@ -38,5 +38,5 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: cd android && fastlane unit_test_and_build
+        run: chmod +x ./gradlew && cd android && fastlane unit_test_and_build
 
