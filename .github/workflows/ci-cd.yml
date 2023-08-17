@@ -45,9 +45,9 @@ jobs:
       - name : Upload Artifact
         uses: actions/upload-artifact@v2
         with :
-          artifacts: "apk/*"
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
+          name: apk-artifact
+          path: apk/
+          retention-days: 7
 
 
 
