@@ -64,12 +64,9 @@ platform :android do
 
 
 
-            gradle(
-               task: 'assembleDebug', # or 'assembleRelease' for release APK
-               project_dir: './android'
 
 
-            )
+            sh("flutter", "build", "apk")
             end
 
 #              if test_result
