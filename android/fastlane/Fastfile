@@ -67,12 +67,11 @@ platform :android do
             )
 
             gradle(
-              task: "assemble",
-              build_type: "Release",
+              task: 'assembleDebug', # or 'assembleRelease' for release APK
+               project_dir: './android'
+
 
             )
-
-
             end
 
 #              if test_result
