@@ -96,7 +96,13 @@ platform :android do
 
                 # Create a folder named 'apk' if it doesn't exist
 
-                sh('mkdir -p apk')
+              #  sh('mkdir -p apk')
+
+
+                  FileUtils.mkdir_p("my_apk")
+
+                  FileUtils.mv("build/app/outputs/flutter-apk/app-release.apk", "my_apk/")
+
 
                 # Move the APK to the 'apk' folder
               #  sh('mv ./build/app/outputs/flutter-apk/app-release.apk apk/')

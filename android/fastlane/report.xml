@@ -5,50 +5,37 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0012533">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0007303">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0104128">
+      <testcase classname="fastlane.lanes" name="1: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project/android/fastlane&apos;" time="0.0099356">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.0091302">
+      <testcase classname="fastlane.lanes" name="2: echo &apos;Running shell script in C:/Users/MN/StudioProjects/cicd_test_project&apos;" time="0.0092496">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: flutter pub get" time="1.4860843">
+      <testcase classname="fastlane.lanes" name="3: flutter pub get" time="1.6985282">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: flutter --version" time="1.0323708">
+      <testcase classname="fastlane.lanes" name="4: flutter --version" time="1.0344574">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="2.9099152">
+      <testcase classname="fastlane.lanes" name="5: flutter test C:/Users/MN/StudioProjects/cicd_test_project/test/unit_test.dart" time="2.8360159">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: echo &apos;Result of test_result  Changing current working directory to: C:\Users\MN\StudioProjects\cicd_test_project
-00:00 +0: calculate
-00:00 +1: All tests passed!
-&apos;" time="0.0134603">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="7: clean" time="1.5251793">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="8: assembleRelease" time="11.7599756">
+      <testcase classname="fastlane.lanes" name="6: flutter build apk --release --no-tree-shake-icons" time="3.3457948">
         
       </testcase>
     
