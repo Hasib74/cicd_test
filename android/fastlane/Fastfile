@@ -80,7 +80,7 @@ platform :android do
                 sh("git","config","--global","user.email","hasibakon74@gmail.com")
                 sh("git","config","--global","user.name","hasib74")
                 sh("git","add",".")
-                sh("git","commit","-m","\"Unit test passed\"")
+                sh("git","commit","-m","Unit test passed"")
                 sh("git","push","origin","master")
 
                 UI.success("Pushed to master")
