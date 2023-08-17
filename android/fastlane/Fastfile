@@ -59,31 +59,44 @@ platform :android do
 
           if test_result
 
-                sh("echo 'Result of test_result  #{test_result}'");
-
-                UI.success("Unit test success")
-
-                sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
-
-                source_apk = './build/app/outputs/flutter-apk/app-release.apk'
-
-                destination_folder = './apk'
+#                 sh("echo 'Result of test_result  #{test_result}'");
 #
-#                 sh("mkdir -p #{destination_folder}")
+#                 UI.success("Unit test success")
 #
-#                 sh("mv #{source_apk} #{destination_folder}")
+#                 sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
+#
+#                 source_apk = './build/app/outputs/flutter-apk/app-release.apk'
+#
+#                 destination_folder = './apk'
+# #
+# #                 sh("mkdir -p #{destination_folder}")
+# #
+# #                 sh("mv #{source_apk} #{destination_folder}")
+#
+#                 UI.success( "Apk file is in #{source_apk}")
+#
+#
+# #                 #upload to github
+# #                 sh("git","config","--global","user.email","hasibakon74@gmail.com")
+# #                 sh("git","config","--global","user.name","hasib74")
+# #                 sh("git","add",".")
+# #                 sh("git","commit","-m","Unit test passed")
+# #
+# #                 sh("git","push","origin","master")
+# #                 UI.success("Pushed to master")
+#
 
-                UI.success( "Apk file is in #{source_apk}")
 
+               gradle(
+                  task: 'assembleDebug',
+                  project_dir: './android'
+                )
 
-                #upload to github
-                sh("git","config","--global","user.email","hasibakon74@gmail.com")
-                sh("git","config","--global","user.name","hasib74")
-                sh("git","add",".")
-                sh("git","commit","-m","Unit test passed")
+                # Create a folder named 'apk' if it doesn't exist
+                sh('mkdir -p apk')
 
-                sh("git","push","origin","master")
-                UI.success("Pushed to master")
+                # Move the APK to the 'apk' folder
+                sh('mv ./android/app/build/outputs/apk/debug/app-debug.apk apk/')
 
 
             end

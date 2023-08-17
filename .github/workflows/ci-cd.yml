@@ -40,7 +40,10 @@ jobs:
       - name: Unit Test
         run: cd android && fastlane unit_test_and_build
 
-      - name: Create APK Directory
-        run: mkdir -p test_apk
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk-artifact
+          path: apk/
 
 
