@@ -62,12 +62,10 @@ platform :android do
 
             UI.success("Unit test success")
 
-            gradle(
-              task: "clean"
-            )
+
 
             gradle(
-              task: 'assembleDebug', # or 'assembleRelease' for release APK
+               task: 'assembleDebug', # or 'assembleRelease' for release APK
                project_dir: './android'
 
 
