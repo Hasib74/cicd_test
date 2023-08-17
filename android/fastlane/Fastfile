@@ -87,11 +87,8 @@ platform :android do
 #
 
 
-               gradle(
-                  task: 'assembleDebug',
-                  project_dir: './android'
-                )
 
+                sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
                 # Create a folder named 'apk' if it doesn't exist
                 sh('mkdir -p apk')
 
