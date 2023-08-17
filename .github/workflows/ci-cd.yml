@@ -38,7 +38,7 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Make gradlew executable
-        run: chmod +x android/gradlew
+        run: cd android && chmod +x ./gradlew
 
 
       - name: Unit Test
