@@ -38,7 +38,7 @@ jobs:
 #        run: fastlane android build_and_test
 
       - name: Unit Test
-        run: cd android && ./gradlew app:assembleDebug && fastlane unit_test_and_build
+        run: cd android && fastlane unit_test_and_build
 
       - name: Create APK Directory
         run: mkdir -p test_apk
