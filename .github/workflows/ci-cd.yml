@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with :
           name: apk-artifact
-          path: apk/
+          path: my_app/
           retention-days: 7
 
 
