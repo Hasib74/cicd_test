@@ -38,11 +38,12 @@ jobs:
 #        run: fastlane android build_and_test
 
 
-      - name : Usges
-        uses: actions/checkout@v2
 
       - name: Unit Test And Build
         run: cd android && fastlane unit_test_and_build
+
+      - name : Upload Artifact
+        uses: actions/upload-artifact@v2
         with :
           name: apk-artifact
           path: apk/
