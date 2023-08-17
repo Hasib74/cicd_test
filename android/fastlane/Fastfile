@@ -58,20 +58,22 @@ platform :android do
 
 
           if test_result
-            sh("echo 'Result of test_result  #{test_result}'");
 
-            UI.success("Unit test success")
+                sh("echo 'Result of test_result  #{test_result}'");
 
-            sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
-          source_apk = './build/app/outputs/flutter-apk/app-release.apk'
-         destination_folder = './apk'
+                UI.success("Unit test success")
 
+                sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
 
-        sh("mkdir -p #{destination_folder}")
+                source_apk = './build/app/outputs/flutter-apk/app-release.apk'
 
+                destination_folder = './apk'
+#
+#                 sh("mkdir -p #{destination_folder}")
+#
+#                 sh("mv #{source_apk} #{destination_folder}")
 
-        sh("mv #{source_apk} #{destination_folder}")
-
+               UI.success( "Apk file is in #{source_apk}")
 
             end
           rescue => exception
