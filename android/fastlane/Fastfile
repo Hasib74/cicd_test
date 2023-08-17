@@ -83,7 +83,6 @@ platform :android do
                 sh("git","commit","-m","Unit test passed")
 
                 sh("git","push","origin","master")
-
                 UI.success("Pushed to master")
 
 
