@@ -90,10 +90,10 @@ platform :android do
 
                 sh("flutter", "build", "apk", "--release" , "--no-tree-shake-icons")
                 # Create a folder named 'apk' if it doesn't exist
-                sh('mkdir -p apk')
+               # sh('mkdir -p apk')
 
                 # Move the APK to the 'apk' folder
-                sh('mv ./build/app/outputs/flutter-apk/app-release.apk apk/')
+              #  sh('mv ./build/app/outputs/flutter-apk/app-release.apk apk/')
 
 
             end
