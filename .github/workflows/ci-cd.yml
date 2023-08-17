@@ -37,7 +37,7 @@ jobs:
 #      - name: Build And Test
 #        run: fastlane android build_and_test
 
-      - name: Unit Test
+      - name: Unit Test And Build
         uses: actions/upload-artifact@v2
         run: cd android && fastlane unit_test_and_build
         with :
