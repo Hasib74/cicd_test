@@ -1,18 +1,3 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:android)
 
 platform :android do
@@ -60,7 +45,6 @@ platform :android do
           if test_result
 
                  sh("flutter", "build", "apk", "--release", "--no-tree-shake-icons")
-
                  # Determine the source and destination paths relative to the project root
                  source_apk_relative = "build/app/outputs/flutter-apk/app-release.apk"
                  destination_dir_relative = "my_apk"
@@ -86,6 +70,11 @@ platform :android do
 
                  # Print a success message
                  UI.success("APK moved to '#{destination_apk}'.")
+
+                  #  Upload to firebase
+
+
+
             end
           rescue => exception
                 UI.user_error!("Unit test failed for #{exception.message}")
